@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <link rel="stylesheet" href="style.css">
+<script src="script.js" defer></script>
 
 <head>
     <meta charset="UTF-8">
@@ -67,9 +68,22 @@
     <div class="paybill">
         <div class="prices">PAY VIA TILL</div>
         <div class="prices">3422432</div>
-        <div class="prices">incase of delays/inquiries</div>
-        <div class="prices">0704914714</div>
+        <div class="prices">or click here to pay</div>
+        <button onclick=showLoginDialog() class="popup">pay</button>
     </div>
+
+    <dialog class="modal" id="modal">
+        <div class="wrapper">
+        <div class="close"><button onclick=closeLogin() id="button">&times;</button></div>
+        <label>phone number:</label><br>
+        <input type="tel" name="+254700000000"><br>
+        <label>amount:</label><br>
+        <input type="number" name="30"><br>
+        <input type="submit" value="pay" class="popup">
+        </div>
+    </dialog>
+
+    
 
     </div>
 
@@ -79,6 +93,23 @@
     </div>
     <footer>BINGWA DATA DEALS</footer>
 
+    <!--  
+    <script>
+       const dialog = document.getElementById("modal")
+       const wrapper = document.querySelector(".wrapper")
+
+       function showLoginDialog(){
+        dialog.showModal() }
+
+       function closeLogin(){
+        dialog.close() }
+
+       dialog.addEventListener("click", (e) => {
+        if(!wrapper.contains(e.target)){dialog.close()}
+       })
+       
+    </script>
+    -->
 
 </body>
 
